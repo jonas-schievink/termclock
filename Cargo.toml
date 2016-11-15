@@ -1,0 +1,9 @@
+[package]
+authors = ["Jonas Schievink <jonas@schievink.net>"]
+name = "termclock"
+version = "0.1.0"
+
+[dependencies]
+term = "0.4.4"
+term_size = "0.2.1"
+time = "0.1.35"
