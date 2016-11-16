@@ -13,9 +13,7 @@ use pancurses::Window;
 const CH_FILL: char = '█';
 const CH_EMPTY: char = ' ';
 
-pub fn draw_text(text: &str, win: &Window) -> usize {
-    let (height, width) = win.get_max_yx();
-
+pub fn draw_text(text: &str, win: &Window) {
     let mut lines = vec![String::new(); FONT_HEIGHT];
 
     for (num, ch) in text.chars().enumerate() {
@@ -52,14 +50,11 @@ pub fn draw_text(text: &str, win: &Window) -> usize {
         }
     }
 
-    let startx = width / 2 - lines[0].chars().count() as i32 / 2; // IIIIHHH
-    let starty = height / 2 - lines.len() as i32 / 2;
+    let starty = win.get_max_y() / 2 - lines.len() as i32 / 2;
 
     for (i, line) in lines.iter().enumerate() {
         draw_centered(starty + i as i32, line, win);
     }
-
-    lines.len()
 }
 
 pub fn draw_centered(row: i32, text: &str, win: &Window) {
