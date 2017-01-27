@@ -42,8 +42,8 @@ pub fn draw_text(text: &str, win: &Window) {
             for c in glyph_line.chars() {
                 let pixel = match c {
                     ' ' => CH_EMPTY,
-                    '1' => CH_FILL,
-                    _ => unreachable!("Font contains invalid character"),
+                    '#' => CH_FILL,
+                    _ => panic!("Font contains invalid character"),
                 };
                 buf_line.push(pixel);
                 buf_line.push(pixel);
