@@ -1,8 +1,8 @@
 
 pub const FONT_HEIGHT: usize = 5;
-pub const FONT_WIDTH: usize = 3;
+//pub const FONT_WIDTH: usize = 3;
 
-/// Fixed 5x5 font used to render only numbers for now
+/// Fixed monospace font used to render the time.
 pub static FONT: &'static [[&'static str; FONT_HEIGHT]] = &[
     [
         "111",
