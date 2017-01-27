@@ -2,6 +2,7 @@
 name = "termclock"
 version = "0.1.0"
 dependencies = [
+ "libc 0.2.20 (registry+https://github.com/rust-lang/crates.io-index)",
  "pancurses 0.7.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "time 0.1.36 (registry+https://github.com/rust-lang/crates.io-index)",
 ]

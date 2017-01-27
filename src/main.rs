@@ -1,11 +1,9 @@
 extern crate time;
 extern crate pancurses;
+extern crate libc;
 
 mod draw;
 mod font;
-
-use std::time::Duration;
-use std::thread::sleep;
 
 static TIME_FORMAT: &'static str = "%H:%M";
 static DATE_FORMAT: &'static str = "%d.%m.%Y";
@@ -20,6 +18,8 @@ fn main() {
         let time_fmt = time::strftime(TIME_FORMAT, &time).unwrap();
         let date_fmt = time::strftime(DATE_FORMAT, &time).unwrap();
 
+        // The double refresh is needed so we correctly respond to a resized terminal
+        main_win.refresh();
         main_win.erase();
         draw::draw_text(&time_fmt, &main_win);
         draw::draw_centered(main_win.get_max_y() / 2 + font::FONT_HEIGHT as i32 / 2 + 2,
@@ -27,6 +27,11 @@ fn main() {
                             &main_win);
         main_win.refresh();
 
-        sleep(Duration::from_secs(1));
+        // Use libc's/nix's `sleep` instead of `std::thread::sleep` to be interrupted by signals.
+        // "On Unix platforms this function will not return early due to a signal being received or
+        // a spurious wakeup."
+        unsafe {
+            libc::sleep(1);
+        }
     }
 }
