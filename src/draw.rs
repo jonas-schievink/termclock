@@ -35,25 +35,26 @@ pub fn draw_text(text: &str, win: &Window) {
         let glyph = &FONT[index];
         for (glyph_line, buf_line) in glyph.iter().zip(lines.iter_mut()) {
             if num != 0 {
+                // Single pixel space between chars
                 buf_line.push(CH_EMPTY);
             }
 
             for c in glyph_line.chars() {
-                if c == '1' {
-                    buf_line.push(CH_FILL);
-                    buf_line.push(CH_FILL);
-                } else {
-                    buf_line.push(CH_EMPTY);
-                    buf_line.push(CH_EMPTY);
-                }
+                let pixel = match c {
+                    ' ' => CH_EMPTY,
+                    '1' => CH_FILL,
+                    _ => unreachable!("Font contains invalid character"),
+                };
+                buf_line.push(pixel);
+                buf_line.push(pixel);
             }
         }
     }
 
-    let starty = win.get_max_y() / 2 - lines.len() as i32 / 2;
+    let start_y = win.get_max_y() / 2 - lines.len() as i32 / 2;
 
     for (i, line) in lines.iter().enumerate() {
-        draw_centered(starty + i as i32, line, win);
+        draw_centered(start_y + i as i32, line, win);
     }
 }
 
