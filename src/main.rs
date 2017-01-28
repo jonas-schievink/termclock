@@ -2,6 +2,7 @@ extern crate time;
 extern crate pancurses;
 extern crate libc;
 #[macro_use] extern crate clap;
+#[macro_use] extern crate lazy_static;
 
 mod draw;
 mod font;

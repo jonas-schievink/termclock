@@ -17,35 +17,16 @@ pub fn draw_text(text: &str, win: &Window) {
     let mut lines = vec![String::new(); FONT_HEIGHT];
 
     for (num, ch) in text.chars().enumerate() {
-        // FIXME use a HashMap or something
-        let index = match ch {
-            '0' => 0,
-            '1' => 1,
-            '2' => 2,
-            '3' => 3,
-            '4' => 4,
-            '5' => 5,
-            '6' => 6,
-            '7' => 7,
-            '8' => 8,
-            '9' => 9,
-            ':' => 10,
-            _ => unimplemented!(),
-        };
+        let glyph = &FONT[&ch];
 
-        let glyph = &FONT[index];
-        for (glyph_line, buf_line) in glyph.iter().zip(lines.iter_mut()) {
+        for (glyph_line, buf_line) in glyph.chunks(FONT_WIDTH).zip(lines.iter_mut()) {
             if num != 0 {
                 // Single pixel space between chars
                 buf_line.push(CH_EMPTY);
             }
 
-            for c in glyph_line.chars() {
-                let pixel = match c {
-                    ' ' => CH_EMPTY,
-                    '#' => CH_FILL,
-                    _ => panic!("Font contains invalid character"),
-                };
+            for &c in glyph_line {
+                let pixel = if c { CH_FILL } else { CH_EMPTY };
                 buf_line.push(pixel);
                 buf_line.push(pixel);
             }
