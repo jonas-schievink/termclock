@@ -6,7 +6,7 @@ mod draw;
 mod font;
 
 static TIME_FORMAT: &'static str = "%H:%M";
-static DATE_FORMAT: &'static str = "%d.%m.%Y";
+static DATE_FORMAT: &'static str = "%x";
 
 fn main() {
     let main_win = pancurses::initscr();
