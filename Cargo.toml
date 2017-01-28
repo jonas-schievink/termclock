@@ -3,6 +3,7 @@ authors = ["Jonas Schievink <jonas@schievink.net>"]
 name = "termclock"
 version = "0.1.0"
 license = "CC0-1.0"
+repository = "https://github.com/jonas-schievink/termclock"
 keywords = ["terminal", "clock", "widget", "tty"]
 categories = ["command-line-utilities"]
 description = """
