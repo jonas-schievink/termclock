@@ -4,6 +4,7 @@ name = "termclock"
 version = "0.1.0"
 
 [dependencies]
-libc = "0.2.20"
+clap = "2.20.0"
+libc = "0.2"
 pancurses = "0.7.0"
 time = "0.1.35"
