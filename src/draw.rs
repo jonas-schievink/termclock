@@ -17,6 +17,7 @@ pub fn draw_text(text: &str, win: &Window) {
     let mut lines = vec![String::new(); FONT_HEIGHT];
 
     for (num, ch) in text.chars().enumerate() {
+        // FIXME use a HashMap or something
         let index = match ch {
             '0' => 0,
             '1' => 1,
