@@ -2,6 +2,11 @@
 authors = ["Jonas Schievink <jonas@schievink.net>"]
 name = "termclock"
 version = "0.1.0"
+keywords = ["terminal", "clock", "widget", "tty"]
+categories = ["command-line-utilities"]
+description = """
+A nice-looking clock for your terminal
+"""
 
 [dependencies]
 clap = "2.20.0"
