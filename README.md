@@ -22,3 +22,7 @@ Happy ricing!
 The primary target platform is, of course, Linux, but in theory Termclock should work on any platform supported by Rust and ncurses.
 
 Since the ncurses wrapper used by Termclock, [pancurses](https://github.com/ihalila/pancurses), also claims to support Windows, it should be possible to get Termclock running there, too. Yay for cross-platform ricing!
+
+## Screenshot
+
+![termclock-screenshot](screenshot.png)
