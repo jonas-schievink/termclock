@@ -63,7 +63,6 @@ fn main() {
 
     let main_win = pancurses::initscr();
     pancurses::curs_set(0); // make the cursor disappear
-    main_win.erase();
 
     loop {
         let time = time::now();
