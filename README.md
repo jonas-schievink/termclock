@@ -10,7 +10,7 @@ Termclock isn't yet published on [crates.io](https://crates.io), nor is it avail
 This is the recommended installation method:
 
 * Clone this repository
-* Make sure you have [Rust](https://rust-lang.org) installed
+* Make sure you have [Rust](http://rust-lang.org) installed
 * Inside the repository root directory, run `cargo install`
 
 If you just want to try it out without installing, you can instead run `cargo run` to see Termclock in action.
