@@ -13,7 +13,7 @@ This is the recommended installation method:
 * Make sure you have [Rust](http://rust-lang.org) installed
 * Inside the repository root directory, run `cargo install`
 
-If you just want to try it out without installing, you can instead run `cargo run` to see Termclock in action.
+If you just want to try it out without installing, you can instead run `cargo run` to see Termclock in action (or `cargo run -- --help` to see the available command line arguments).
 
 Happy ricing!
 
