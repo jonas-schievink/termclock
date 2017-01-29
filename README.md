@@ -5,15 +5,11 @@ Termclock is a very simple but beautiful clock for your terminal. By default, it
 
 ## Install
 
-Termclock isn't yet published on [crates.io](https://crates.io), nor is it available in any distributions.
+Termclock isn't yet available in any distribution, but it *is* published on [crates.io](https://crates.io/).
 
-This is the recommended installation method:
+You need to have [Rust](http://rust-lang.org) installed. Install Termclock by running:
 
-* Clone this repository
-* Make sure you have [Rust](http://rust-lang.org) installed
-* Inside the repository root directory, run `cargo install`
-
-If you just want to try it out without installing, you can instead run `cargo run` to see Termclock in action (or `cargo run -- --help` to see the available command line arguments).
+    cargo install termclock
 
 Happy ricing!
 
