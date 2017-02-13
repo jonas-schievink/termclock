@@ -1,4 +1,4 @@
-# Termclock
+# Termclock [![crates.io](https://img.shields.io/crates/v/termclock.svg)](https://crates.io/crates/termclock)
 
 Termclock is a very simple but beautiful clock for your terminal. By default, it will display the time in big letters as well as the date in normal text below.
 
